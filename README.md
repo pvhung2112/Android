@@ -1,6 +1,6 @@
-# 📱 Group 9 - Dự Án Phát Triển Ứng Dụng Di Động Android
+# 📱 Group 9 - Dự Án Phát Triển Ứng Dụng Với Flutter
 
-Chào mừng bạn đến với kho lưu trữ mã nguồn của **Group 9**. Dự án này được phát triển trong khuôn khổ môn học Lập trình Thiết bị Di động (Android).
+Chào mừng bạn đến với kho lưu trữ mã nguồn của **Group 9**. Dự án này được phát triển bằng **Flutter & Dart** trong khuôn khổ môn học Phát triển Ứng dụng Di động.
 
 ---
 
@@ -8,19 +8,18 @@ Chào mừng bạn đến với kho lưu trữ mã nguồn của **Group 9**. D�
 
 | STT | Họ và Tên | Mã Sinh Viên | Vai Trò | Nhiệm Vụ Phụ Trách | GitHub Username |
 | :---: | :--- | :---: | :---: | :--- | :--- |
-| 1 | **Phạm Văn Hùng** | *Điền MSSV* | **Team Leader / Core Dev** | Quản lý dự án, thiết lập repo, kiến trúc ứng dụng & merge PR | [@pvhung2112](https://github.com/pvhung2112) |
-| 2 | *Thành viên 2* | *Điền MSSV* | Frontend Dev | Thiết kế Layout XML, UI/UX, xử lý giao diện người dùng | [@username2](https://github.com/) |
-| 3 | *Thành viên 3* | *Điền MSSV* | Backend / Database | Xây dựng cơ sở dữ liệu (Room / SQLite), API Integration | [@username3](https://github.com/) |
-| 4 | *Thành viên 4* | *Điền MSSV* | Tester / QA | Viết tài liệu kiểm thử, Test chức năng, Review PR | [@username4](https://github.com/) |
+| 1 | **Phạm Văn Hùng** | *Điền MSSV* | **Team Leader / Core Dev** | Quản lý dự án, cấu hình hệ thống, kiến trúc ứng dụng & merge PR | [@pvhung2112](https://github.com/pvhung2112) |
+| 2 | *Thành viên 2* | *Điền MSSV* | Frontend Dev | Thiết kế UI/UX Widgets, Xử lý giao diện màn hình Flutter | [@username2](https://github.com/) |
+| 3 | *Thành viên 3* | *Điền MSSV* | Backend / State Management | Quản lý trạng thái (Provider/Bloc), Tích hợp REST API / Firebase | [@username3](https://github.com/) |
+| 4 | *Thành viên 4* | *Điền MSSV* | Tester / QA | Viết tài liệu kiểm thử, Test chức năng trên thiết bị/máy ảo, Review PR | [@username4](https://github.com/) |
 
 ---
 
 ## 🛠️ Công Nghệ & Môi Trường Phát Triển
 
-- **Ngôn ngữ lập trình:** Java / Kotlin
-- **IDE khuyên dùng:** Android Studio (phiên bản Iguana / Jellyfish trở lên)
-- **Hệ thống Build:** Gradle (Kotlin DSL hoặc Groovy DSL)
-- **Target SDK:** 34 | **Min SDK:** 24
+- **Framework:** [Flutter](https://flutter.dev/) (phiên bản 3.x trở lên)
+- **Ngôn ngữ:** [Dart](https://dart.dev/)
+- **IDE khuyên dùng:** VS Code / Android Studio (đã cài extension Flutter & Dart)
 - **Quản lý phiên bản:** Git & GitHub
 
 ---
@@ -28,8 +27,12 @@ Chào mừng bạn đến với kho lưu trữ mã nguồn của **Group 9**. D�
 ## 🚀 Hướng Dẫn Cài Đặt & Chạy Dự Án
 
 ### 1. Yêu cầu tiên quyết
-- Cài đặt [Android Studio](https://developer.android.com/studio) và JDK 17+.
-- Đã cấu hình biến môi trường `ANDROID_HOME`.
+- Đã cài đặt [Flutter SDK](https://docs.flutter.dev/get-started/install) và cấu hình biến môi trường PATH.
+- Đã cài đặt VS Code hoặc Android Studio.
+- Đã kiểm tra môi trường bằng lệnh:
+  ```bash
+  flutter doctor
+  ```
 
 ### 2. Clone mã nguồn về máy
 Mở terminal / CMD / Git Bash và chạy lệnh:
@@ -38,27 +41,31 @@ git clone https://github.com/pvhung2112/Android.git
 cd Android
 ```
 
-### 3. Mở dự án trên Android Studio
-1. Khởi động Android Studio.
-2. Chọn **Open** -> Điều hướng đến thư mục dự án vừa clone.
-3. Chờ Android Studio đồng bộ các dependency qua Gradle (`Gradle Sync`).
+### 3. Cài đặt các gói phụ thuộc (Dependencies)
+```bash
+flutter pub get
+```
 
 ### 4. Chạy ứng dụng
-1. Khởi chạy thiết bị ảo (Android Emulator) hoặc kết nối thiết bị thật (bật chế độ *USB Debugging*).
-2. Nhấn nút **Run** (biểu tượng ▶️ màu xanh) hoặc tổ hợp phím `Shift + F10` để build và cài đặt ứng dụng.
+1. Khởi chạy thiết bị ảo (Android Emulator / iOS Simulator) hoặc kết nối thiết bị thật (bật USB Debugging).
+2. Chạy lệnh:
+   ```bash
+   flutter run
+   ```
+   *(Hoặc trong VS Code: nhấn phím `F5` / chọn `Run Without Debugging`)*
 
 ---
 
 ## 🌿 Quy Trình Nhánh & Đóng Góp Mã Nguồn (Git Workflow)
 
-Để đảm bảo chất lượng mã nguồn và tránh xung đột code khi làm việc nhóm, nhóm áp dụng quy trình Git Flow như sau:
+Nhóm áp dụng quy trình Git Flow để làm việc nhóm hiệu quả và tránh xung đột code:
 
 1. **Nhánh chính (`main`):**
-   - Chỉ chứa code ổn định, đã qua kiểm thử và sẵn sàng phát hành.
-   - **Không được phép commit trực tiếp lên `main`**.
+   - Chỉ chứa code hoàn chỉnh, đã kiểm thử và sẵn sàng báo cáo/phát hành.
+   - **Không commit trực tiếp lên `main`**.
 
 2. **Nhánh phát triển (`develop`):**
-   - Nhánh tập hợp code từ các tính năng đang phát triển.
+   - Nhánh tích hợp các tính năng mới từ các thành viên.
 
 3. **Nhánh tính năng (`feature/...` hoặc `bugfix/...`):**
    - Mỗi thành viên khi làm tính năng mới sẽ tách nhánh từ `develop`:
@@ -69,9 +76,9 @@ cd Android
      ```
 
 4. **Tạo Pull Request (PR):**
-   - Sau khi hoàn thành và commit code:
+   - Đẩy nhánh tính năng lên GitHub:
      ```bash
      git push origin feature/ten-tinh-nang
      ```
-   - Lên GitHub tạo Pull Request từ nhánh `feature/ten-tinh-nang` vào nhánh `develop` (hoặc `main`).
+   - Tạo Pull Request từ nhánh `feature/...` vào nhánh `develop` (hoặc `main`).
    - Cần ít nhất **1 thành viên khác review** code trước khi được phép Merge.
