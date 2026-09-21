@@ -1,27 +1,6 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.buildlog/
-.history
-.svn/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# Visual Studio Code related
-.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# ==========================================
+# Flutter / Dart
+# ==========================================
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
@@ -29,28 +8,28 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-
-# Symbol processing related
+**/doc/api/
 app.*.symbols
-
-# Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-
-# Android specific
+# ==========================================
+# Android
+# ==========================================
 .gradle/
 local.properties
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
 **/android/**/gradle-wrapper.jar
 *.apk
 *.aar
 *.aab
 *.dex
+*.class
 
-# iOS specific
+# ==========================================
+# iOS / macOS
+# ==========================================
 **/ios/**/*.mode1v3
 **/ios/**/*.mode2v3
 **/ios/**/*.moved-aside
@@ -70,11 +49,43 @@ local.properties
 **/ios/.symlinks/
 Podfile.lock
 
-# Keystore files
+# ==========================================
+# Web Mobile Demo (Next.js / Node.js)
+# ==========================================
+node_modules/
+**/node_modules/
+.next/
+**/.next/
+out/
+build/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ==========================================
+# IDE & Editors
+# ==========================================
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# ==========================================
+# Environment & Secrets
+# ==========================================
+.env
+.env*.local
 *.jks
 *.keystore
-
-# Google Services / Secrets
 google-services.json
 GoogleService-Info.plist
-.env*
+
+# ==========================================
+# Operating System
+# ==========================================
+.DS_Store
+Thumbs.db
+*.log

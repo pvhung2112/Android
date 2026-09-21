@@ -1,6 +1,6 @@
 # 📱 Group 9 - Hệ Thống Quản Lý Lý Lịch Thiết Bị & Bảo Trì Nhà Máy
 
-Chào mừng bạn đến với kho lưu trữ mã nguồn của **Group 9**. Dự án **Hệ Thống Quản Lý Lý Lịch Thiết Bị & Bảo Trì Nhà Máy** là ứng dụng di động được phát triển bằng **Flutter & Dart** nhằm hỗ trợ theo dõi hồ sơ thiết bị, lịch trình bảo trì định kỳ, ghi nhận sự cố và quản lý vận hành thiết bị trong môi trường nhà máy / xí nghiệp.
+Chào mừng bạn đến với kho lưu trữ mã nguồn của **Group 9**. Dự án **Hệ Thống Quản Lý Lý Lịch Thiết Bị & Bảo Trì Nhà Máy** là giải pháp toàn diện hỗ trợ theo dõi hồ sơ thiết bị, lịch trình bảo trì định kỳ, ghi nhận và xử lý sự cố tức thì trong môi trường nhà máy / phân xưởng sản xuất.
 
 ---
 
@@ -16,44 +16,81 @@ Chào mừng bạn đến với kho lưu trữ mã nguồn của **Group 9**. D�
 
 ---
 
-## 🛠️ Công Nghệ & Môi Trường Phát Triển
+## 🛠️ Công Nghệ Sử Dụng (Technology Stack)
 
-- **Framework:** [Flutter](https://flutter.dev/) (phiên bản 3.x trở lên)
-- **Ngôn ngữ:** [Dart](https://dart.dev/)
-- **IDE khuyên dùng:** VS Code / Android Studio (đã cài extension Flutter & Dart)
-- **Hệ thống Quản lý Phiên bản:** Git & GitHub
+### 1. Mobile Application (Core App)
+- **Framework:** [Flutter](https://flutter.dev/) (Dart) — Phát triển ứng dụng di động đa nền tảng (Android / iOS).
+- **State Management:** Riverpod.
+- **QR Code Scanner:** `mobile_scanner` (decode mã QR thiết bị trong < 1.5s).
+- **Digital Signature:** `signature` Canvas SDK (xuất ảnh chữ ký xác nhận bảo trì định dạng PNG).
+- **Image Storage & CDN:** Cloudflare (Cloudflare R2 Storage / Cloudflare Images).
+- **Offline Storage & Sync:** SQLite (`sqflite`) lưu trữ Local Queue khi mất mạng, tự động đồng bộ dữ liệu khi có kết nối trở lại.
+
+### 2. Backend & Infrastructure
+- **BaaS Platform:** [Supabase](https://supabase.com/) / Firebase (PostgreSQL / Firestore NoSQL).
+- **Cloud Storage:** Cloudflare R2 / Firebase Storage lưu trữ ảnh hiện trường sự cố và ảnh chữ ký.
+- **Security:** Row-Level Security (RLS) / Security Rules phân quyền theo từng phân xưởng (`workshop_id`).
+- **Realtime & Cloud Functions:** Database Triggers, Cloud Functions.
+- **Push Notification:** Firebase Cloud Messaging (FCM) thông báo sự cố tức thì đến kỹ thuật viên.
+
+### 3. Web Mobile Demo
+- **Framework:** Next.js 16 (App Router) + TypeScript + Tailwind CSS v4 + shadcn/ui (dùng cho bản trải nghiệm giao diện Web di động tại thư mục `ui/`).
 
 ---
 
-## 🚀 Hướng Dẫn Cài Đặt & Chạy Dự Án
+## 🚀 Hướng Dẫn Cài Đặt Và Chạy Ứng Dụng (Installation & Setup Guide)
 
-### 1. Yêu cầu tiên quyết
-- Đã cài đặt [Flutter SDK](https://docs.flutter.dev/get-started/install) và cấu hình biến môi trường PATH.
-- Đã cài đặt VS Code hoặc Android Studio.
-- Đã kiểm tra môi trường bằng lệnh:
-  ```bash
-  flutter doctor
-  ```
+### 4.1. Chạy Ứng Dụng Di Động Flutter (Flutter Mobile App)
 
-### 2. Clone mã nguồn về máy
-Mở terminal / CMD / Git Bash và chạy lệnh:
+**Yêu cầu tiền đề:**
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (≥ 3.19.0)
+- Android Studio / Xcode / VS Code (đã cài extension Flutter & Dart)
+- Thiết bị thật hoặc Emulator / Simulator (Android / iOS)
+
+**Các bước thực hiện:**
 ```bash
-git clone https://github.com/pvhung2112/Android.git
-cd Android
-```
+# 1. Di chuyển vào thư mục dự án Flutter gốc
+cd project
 
-### 3. Cài đặt các gói phụ thuộc (Dependencies)
-```bash
+# 2. Tải các gói thư viện phụ thuộc (Dependencies)
 flutter pub get
+
+# 3. Kiểm tra thiết bị sẵn sàng
+flutter devices
+
+# 4. Chạy ứng dụng trên thiết bị di động
+flutter run
 ```
 
-### 4. Chạy ứng dụng
-1. Khởi chạy thiết bị ảo (Android Emulator) hoặc kết nối thiết bị thật (bật USB Debugging).
-2. Chạy lệnh:
-   ```bash
-   flutter run
-   ```
-   *(Hoặc trong VS Code: nhấn phím `F5` / chọn `Run Without Debugging`)*
+---
+
+### 4.2. Chạy Bản Trải Nghiệm Giao Diện Web Mobile (Next.js Demo)
+
+**Yêu cầu tiền đề:**
+- Node.js (≥ 18.x)
+- npm (≥ 9.x)
+
+**Các bước thực hiện:**
+```bash
+# 1. Di chuyển vào thư mục giao diện UI
+cd ui
+
+# 2. Cài đặt các gói npm
+npm install
+
+# 3. Khởi động Server phát triển (Dev Server)
+npm run dev
+```
+> Trình duyệt tự động mở tại đường dẫn: `http://localhost:3000`
+
+---
+
+## 📚 Tài Liệu Thiết Kế Chi Tiết (Project Documentation)
+
+- **Tóm tắt Quản lý Dự án:** `overview.md`
+- **Đặc tả Thiết kế SAD (System Architecture Document):** `system_design.md`
+- **Thiết kế CSDL & Tập lệnh SQL:** `database_schema.md`
+- **Thiết kế Giao diện UI/UX:** `design.md`
 
 ---
 
