@@ -8,7 +8,7 @@ Chào mừng bạn đến với kho lưu trữ mã nguồn của **Group 9**. D�
 
 | STT | Họ và Tên | Mã Sinh Viên | Vai Trò | Nhiệm Vụ Phụ Trách |
 | :---: | :--- | :---: | :---: | :--- |
-| 1 | **Phạm Văn Hùng** | **2351170598** | Thành viên / Core Dev | Cấu hình dự án, kiến trúc ứng dụng & kết nối chức năng cốt lõi |
+| 1 | **Phạm Văn Hưng** | **2351170598** | Thành viên / Core Dev | Cấu hình dự án, kiến trúc ứng dụng & kết nối chức năng cốt lõi |
 | 2 | **Trịnh Trung Kiên** | **2251172396** | Thành viên / Frontend | Thiết kế UI/UX, màn hình danh mục & hồ sơ lý lịch thiết bị |
 | 3 | **Đỗ Việt Tiến** | **2251243452** | Thành viên / Frontend | Thiết kế giao diện lập lịch bảo dưỡng & báo cáo sự cố |
 | 4 | **Cao Đức Đạo** | **2351170581** | Thành viên / Backend | Quản lý cơ sở dữ liệu thiết bị, tích hợp API hệ thống |
