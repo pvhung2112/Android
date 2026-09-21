@@ -1,17 +1,18 @@
-# 📱 Group 9 - Dự Án Phát Triển Ứng Dụng Với Flutter
+# 📱 Group 9 - Hệ Thống Quản Lý Lý Lịch Thiết Bị & Bảo Trì Nhà Máy
 
-Chào mừng bạn đến với kho lưu trữ mã nguồn của **Group 9**. Dự án này được phát triển bằng **Flutter & Dart** trong khuôn khổ môn học Phát triển Ứng dụng Di động.
+Chào mừng bạn đến với kho lưu trữ mã nguồn của **Group 9**. Dự án **Hệ Thống Quản Lý Lý Lịch Thiết Bị & Bảo Trì Nhà Máy** là ứng dụng di động được phát triển bằng **Flutter & Dart** nhằm hỗ trợ theo dõi hồ sơ thiết bị, lịch trình bảo trì định kỳ, ghi nhận sự cố và quản lý vận hành thiết bị trong môi trường nhà máy / xí nghiệp.
 
 ---
 
 ## 👥 Danh Sách Thành Viên & Phân Công Nhiệm Vụ
 
-| STT | Họ và Tên | Mã Sinh Viên | Vai Trò | Nhiệm Vụ Phụ Trách | GitHub Username |
-| :---: | :--- | :---: | :---: | :--- | :--- |
-| 1 | **Phạm Văn Hùng** | *Điền MSSV* | **Team Leader / Core Dev** | Quản lý dự án, cấu hình hệ thống, kiến trúc ứng dụng & merge PR | [@pvhung2112](https://github.com/pvhung2112) |
-| 2 | *Thành viên 2* | *Điền MSSV* | Frontend Dev | Thiết kế UI/UX Widgets, Xử lý giao diện màn hình Flutter | [@username2](https://github.com/) |
-| 3 | *Thành viên 3* | *Điền MSSV* | Backend / State Management | Quản lý trạng thái (Provider/Bloc), Tích hợp REST API / Firebase | [@username3](https://github.com/) |
-| 4 | *Thành viên 4* | *Điền MSSV* | Tester / QA | Viết tài liệu kiểm thử, Test chức năng trên thiết bị/máy ảo, Review PR | [@username4](https://github.com/) |
+| STT | Họ và Tên | Mã Sinh Viên | Vai Trò | Nhiệm Vụ Phụ Trách |
+| :---: | :--- | :---: | :---: | :--- |
+| 1 | **Phạm Văn Hùng** | **2351170598** | Thành viên / Core Dev | Cấu hình dự án, kiến trúc ứng dụng & kết nối chức năng cốt lõi |
+| 2 | **Trịnh Trung Kiên** | **2251172396** | Thành viên / Frontend | Thiết kế UI/UX, màn hình danh mục & hồ sơ lý lịch thiết bị |
+| 3 | **Đỗ Việt Tiến** | **2251243452** | Thành viên / Frontend | Thiết kế giao diện lập lịch bảo dưỡng & báo cáo sự cố |
+| 4 | **Cao Đức Đạo** | **2351170581** | Thành viên / Backend | Quản lý cơ sở dữ liệu thiết bị, tích hợp API hệ thống |
+| 5 | **Trương Tuấn Hải** | **2351170590** | Thành viên / QA | Kiểm thử chức năng (Testing), viết tài liệu & kiểm soát PR |
 
 ---
 
@@ -20,7 +21,7 @@ Chào mừng bạn đến với kho lưu trữ mã nguồn của **Group 9**. D�
 - **Framework:** [Flutter](https://flutter.dev/) (phiên bản 3.x trở lên)
 - **Ngôn ngữ:** [Dart](https://dart.dev/)
 - **IDE khuyên dùng:** VS Code / Android Studio (đã cài extension Flutter & Dart)
-- **Quản lý phiên bản:** Git & GitHub
+- **Hệ thống Quản lý Phiên bản:** Git & GitHub
 
 ---
 
@@ -47,7 +48,7 @@ flutter pub get
 ```
 
 ### 4. Chạy ứng dụng
-1. Khởi chạy thiết bị ảo (Android Emulator / iOS Simulator) hoặc kết nối thiết bị thật (bật USB Debugging).
+1. Khởi chạy thiết bị ảo (Android Emulator) hoặc kết nối thiết bị thật (bật USB Debugging).
 2. Chạy lệnh:
    ```bash
    flutter run
@@ -58,10 +59,10 @@ flutter pub get
 
 ## 🌿 Quy Trình Nhánh & Đóng Góp Mã Nguồn (Git Workflow)
 
-Nhóm áp dụng quy trình Git Flow để làm việc nhóm hiệu quả và tránh xung đột code:
+Nhóm áp dụng quy trình Git Flow để làm việc nhóm hiệu quả và kiểm soát chất lượng code:
 
 1. **Nhánh chính (`main`):**
-   - Chỉ chứa code hoàn chỉnh, đã kiểm thử và sẵn sàng báo cáo/phát hành.
+   - Chứa mã nguồn ổn định, đã qua kiểm thử và sẵn sàng báo cáo.
    - **Không commit trực tiếp lên `main`**.
 
 2. **Nhánh phát triển (`develop`):**
